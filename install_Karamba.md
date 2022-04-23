@@ -50,7 +50,4 @@ Grasshopperを起動して、インストールが無事完了していること
 
 ライセンスの情報は、「Karamba3D」内のコンポーネント「Licence」と「Panel」を繋ぐことで確認することができます。
 
-![9](https://user-images.githubusercontent.com/104243699/164878260-bbfcc65b-67e1-42d6-8282-f00ebf9c32df.PNG)
-
-<img width="1920" alt="10" src="https://user-images.githubusercontent.com/104243699/164878287-63bc9652-4b74-4892-bc3d-024c77ab96e6.PNG">
-
+![9](https://user-images.githubusercontent.com/104243699/164878343-1f56b1a4-1961-43b4-95e3-7fb97dd14fbf.PNG)
