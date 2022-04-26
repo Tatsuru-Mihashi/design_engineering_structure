@@ -3,13 +3,15 @@
 この講義ではKalamba3Dというglasshopperのプラグインを用いて構造解析を行います。
 
 ## Karamba3Dのインストール
-下記のURLからダウンロードします。
+下記のFood4Rhino（コンポーネントを集めたサイト）からダウンロードします。
 
 Rhinocerosのアカウントでログインする必要があります。
 
 https://www.food4rhino.com/en/app/karamba3d
 
 自分のRhinocerosのバージョンと、PC（Windows,Mac）の条件が合致するものを選んでダウンロードしてください。
+
+Kalamba3DのVersionは2.2と1.3がありますが、講義は2.2をベースに行います。1.3でも外観は異なる可能性がありますが、問題はないものと思います。
 
 <img width="1491" alt="1" src="https://user-images.githubusercontent.com/104243699/164877735-10f76818-f6e1-42df-85fe-7688b3f5a3a6.PNG">
 
@@ -22,7 +24,7 @@ Karamba3Dの体験版には2つの種類があります。
 * FULL コンポーネントに制限はないが、要素数（梁とシェルの数）に制限がある
 * FREE コンポーネントに制限はあるが、要素数（梁とシェルの数）に制限がない
 
-例ではFREEをインストールします。
+難しい機能は使わないので、今回はFREEをインストールします。
 
 <img width="386" alt="3" src="https://user-images.githubusercontent.com/104243699/164877781-144e49ba-44b2-482f-8914-796bb35d4a99.PNG">
 
