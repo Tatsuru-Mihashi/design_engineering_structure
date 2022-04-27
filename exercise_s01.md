@@ -7,13 +7,13 @@
 ## Grasshopperによる描画
 
 
-以下の条件でgrasshopper上で節点及び線を描画します。
+grasshopper上で節点及び線を描画します。
 
 点A　原点（ 0, 0, 0 )
 
-点C　　　（ L, 0, 0 )
+点B　　　（ L, 0, 0 )
 
-点B　AB間の中心（ L / 2, 0, 0 )
+点C　AB間の中心（ L / 2, 0, 0 )
 
 スパンLはNumberSliderでパラメーターとして設定します。
 
