@@ -4,7 +4,6 @@
 
 ![](img/2022-04-27-20-32-10.png)
 
-***
 ## Grasshopperによる描画
 
 
@@ -20,7 +19,6 @@
 
 ![](img/2022-04-27-20-16-42.png)
 
-***
 ## コンポーネントの配置例
 
 以下に配置例を示します。
@@ -40,7 +38,6 @@
 ・Line(Curve → Primitive)
 
 
-***
 ## Karamba3Dによる解析
 
 
@@ -79,6 +76,4 @@
 ・Model View(Karamba3D → Results)
 
 ・Beam View(Karamba3D → Results)
-
-![](img/2022-04-27-20-43-09.png)
 
