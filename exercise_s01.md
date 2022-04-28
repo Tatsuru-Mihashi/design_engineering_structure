@@ -17,7 +17,7 @@ grasshopper上で節点及び線を描画します。
 
 スパンLはNumberSliderでパラメーターとして設定します。
 
-![](img/2022-04-27-20-16-42.png)
+![](img/2022-04-28-11-25-25.png)
 
 ## コンポーネントの配置例
 
@@ -69,6 +69,8 @@ grasshopper上で節点及び線を描画します。
 
 ・Materials(Karamba3D → Materials)
 
+・Loads(Karamba3D → Load)
+
 ・Assemble(Karamba3D → Algorithms)
 
 ・Analyze(Karamba3D → Algorithms)
@@ -76,4 +78,23 @@ grasshopper上で節点及び線を描画します。
 ・Model View(Karamba3D → Results)
 
 ・Beam View(Karamba3D → Results)
+
+## 検証
+
+解析結果が出たら中央の曲げモーメント及び中央（B点）の変形量について検証を行います。
+検証に使う断面二次モーメントはIx=cm4 とします。
+
+単純梁の中央の曲げモーメント
+```math
+M=\frac{1}{8} w \cdot L^{2}
+```
+中央部の変形
+```math
+\delta=\frac{5\cdot w \cdot L^{4}}{384EI} 
+```
+ここに
+スパン：    $L$(cm)
+分布荷重：  $w$(kN/cm)
+ヤング係数：$E$(kN/cm<sup>2</sup>)
+断面二次モーメント：$I$(cm<sup>4</sup>)
 
