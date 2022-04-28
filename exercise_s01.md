@@ -85,16 +85,15 @@ grasshopper上で節点及び線を描画します。
 検証に使う断面二次モーメントはIx=cm4 とします。
 
 単純梁の中央の曲げモーメント
-```math
-M=\frac{1}{8} w \cdot L^{2}
-```
+<img src="https://latex.codecogs.com/svg.image?M=\frac{1}{8}&space;wL^{2}">
+
 中央部の変形
-```math
-\delta=\frac{5\cdot w \cdot L^{4}}{384EI} 
-```
+<img src="https://latex.codecogs.com/svg.image?\delta=\frac{5wL^{4}}{384EI}&space;">
+
 ここに
-スパン：    $L$(cm)
-分布荷重：  $w$(kN/cm)
-ヤング係数：$E$(kN/cm<sup>2</sup>)
-断面二次モーメント：$I$(cm<sup>4</sup>)
+スパン：    L
+分布荷重：  w
+ヤング係数：E
+断面二次モーメント：I
+
 
