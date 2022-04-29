@@ -1,10 +1,10 @@
 # 演習1（構造）
-## 単純梁の解析
+## 1. 演習課題
 以下のような単純梁をGrasshopper + Karamba3Dで解析します。
 
 ![](img/2022-04-27-20-32-10.png)
 
-## Grasshopperによる描画
+##2. Grasshopperによる描画
 
 
 grasshopper上で節点及び線を描画します。
@@ -19,9 +19,9 @@ grasshopper上で節点及び線を描画します。
 
 ![](img/2022-04-28-11-25-25.png)
 
-## コンポーネントの配置例
+### 2.1 コンポーネントの配置例1
 
-以下にコンポーネントの配置例を示します。他にも様々な方法があります。
+コンポーネントのみで配置した例
 
 ![](img/2022-04-27-20-18-24.png)
 
@@ -37,17 +37,43 @@ grasshopper上で節点及び線を描画します。
 
 ・Line(Curve → Primitive)
 
+### 2.2 コンポーネントの配置例2
 
-## Karamba3Dによる解析
+ghPythonを使用した例
+
+![](img/2022-04-29-22-37-35.png)
+
+ghPythonではジオメトリを格納した変数をコンポーネントの出力変数名に一致させる必要があります。
+
+```python
+import rhinoscriptsyntax as rs
+
+# 座標の定義（タプルで定義します。リストでも可）
+crdA = (  0,0,0)
+crdB = (L/2,0,0)
+crdC = (  L,0,0)
+
+# 節点の定義
+ptA = rs.AddPoint(crdA) 
+ptB = rs.AddPoint(crdB)
+ptC = rs.AddPoint(crdC)
+
+# 要素（LINE）の定義
+elemA = rs.AddLine( crdA, crdB )
+elemB = rs.AddLine( crdB, crdC )
+
+```
+
+## 3. Karamba3Dによる解析
 
 
-1.支点（境界条件）の設定
+1.支点（境界条件）の定義
 
-2.梁要素の設定
+2.要素の定義
 
-3.断面形状の定義（H形鋼）
+3.材料の定義（鉄骨）
 
-4.材料の定義（鉄骨）
+4.断面形状の定義（H形鋼）
 
 5.分布荷重の設定
 
@@ -57,7 +83,7 @@ grasshopper上で節点及び線を描画します。
 
 8.出力（モデル及び梁要素）
 
-![](img/2022-04-27-20-52-56.png)
+![](img/2022-04-29-23-45-09.png)
 
 使用コンポーネント
 
@@ -65,9 +91,9 @@ grasshopper上で節点及び線を描画します。
 
 ・LineToBeam(Karamba3D → Model)
 
-・Cross Section(Karamba3D → Cross Section)
+・MaterialSection(Karamba3D → Materials)
 
-・Materials(Karamba3D → Materials)
+・CrossSection(Karamba3D → Cross Section)
 
 ・Loads(Karamba3D → Load)
 
@@ -79,12 +105,12 @@ grasshopper上で節点及び線を描画します。
 
 ・Beam View(Karamba3D → Results)
 
-## 検証
+## 4.検証
 
 解析結果が出たら中央の曲げモーメント及び中央（B点）の変形量について検証を行います。
-検証に使う断面二次モーメントはIx=cm4 とします。
+検証に使う断面二次モーメントはIx=22965cm<sup>4</sup>とします。
 
-単純梁の中央の曲げモーメント
+単純梁の最大（中央部）の曲げモーメント
 
 <img src="https://latex.codecogs.com/svg.image?M=\frac{1}{8}&space;wL^{2}">
 
@@ -93,9 +119,8 @@ grasshopper上で節点及び線を描画します。
 <img src="https://latex.codecogs.com/svg.image?\delta=\frac{5wL^{4}}{384EI}&space;">
 
 ここに
-スパン：    L
-分布荷重：  w
-ヤング係数：E
-断面二次モーメント：I
+スパン：L、分布荷重：w、ヤング係数：E、断面二次モーメント：I
 
+各自、手計算（電卓・Excelなど）で検証してみましょう。
 
+※ 手計算ではせん断変形の影響を無視していますので、変形は若干小さめになります。
