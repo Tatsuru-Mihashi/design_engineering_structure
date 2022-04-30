@@ -59,8 +59,8 @@ ptB = rs.AddPoint(crdB)
 ptC = rs.AddPoint(crdC)
 
 # 要素（LINE）の定義
-elemA = rs.AddLine( crdA, crdB )
-elemB = rs.AddLine( crdB, crdC )
+elemAB = rs.AddLine( crdA, crdB )
+elemBC = rs.AddLine( crdB, crdC )
 
 ```
 
