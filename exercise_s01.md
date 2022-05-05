@@ -4,7 +4,7 @@
 
 ![](img/2022-04-27-20-32-10.png)
 
-##2. Grasshopperによる描画
+## 2. Grasshopperによる描画
 
 
 grasshopper上で節点及び線を描画します。
