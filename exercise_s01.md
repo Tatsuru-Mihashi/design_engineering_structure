@@ -4,6 +4,12 @@
 
 ![](img/2022-04-27-20-32-10.png)
 
+鋼材のヤング係数E=205000N/mm<sup>2</sup>
+
+断面 H - 400 x 200 x 8 x 13 ( Ix=22965cm<sup>4</sup> Zx = 1148cm<sup>3</sup>)
+
+点BはACの中点とする。
+
 ## 2. Grasshopperによる描画
 
 
@@ -108,7 +114,6 @@ elemBC = rs.AddLine( crdB, crdC )
 ## 4.検証
 
 解析結果が出たら中央の曲げモーメント及び中央（B点）の変形量について検証を行います。
-検証に使う断面二次モーメントはIx=22965cm<sup>4</sup>とします。
 
 単純梁の最大（中央部）の曲げモーメント
 
@@ -119,6 +124,7 @@ elemBC = rs.AddLine( crdB, crdC )
 <img src="https://latex.codecogs.com/svg.image?\delta=\frac{5wL^{4}}{384EI}&space;">
 
 ここに
+
 スパン：L、分布荷重：w、ヤング係数：E、断面二次モーメント：I
 
 各自、手計算（電卓・Excelなど）で検証してみましょう。
