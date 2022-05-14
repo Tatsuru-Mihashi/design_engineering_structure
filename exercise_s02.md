@@ -88,13 +88,13 @@ rhino-pythonを用いて描画した場合（幾何計算）
 
 1. 幾何条件L,hよりrを求める
    
-   L2/4+(r-h)2=r2 → r=(L2/4+h2)/2h
+   L<sup>2</sup>/4+(r-h)<sup>2</sup>=r<sup>2</sup> → r=(L<sup>2</sup>/4+h<sup>2</sup>)/2h
 
-2. cosα=L/2/rよりαを求める
+2. rcosα=L/2よりαを求める
    
 3. π-2αをn等分してi番目の節点座標を求める
 
-※原点を基点に計算しているので、y座標をr-hだけ引く必要があります。
+※原点を基点に計算しているので、y座標をr-h引く必要があります。
 
 ```python
 import rhinoscriptsyntax as rs
