@@ -1,7 +1,7 @@
 # 演習2
 
 ## 1.演習課題
-アーチ構造を解析し、作用する応力度を計算します。
+アーチ構造を解析し、構造部材に作用する応力度を計算します。
 
 
 ### 架構形状
@@ -22,10 +22,10 @@
 
 O - 400 x 12（直径400mm、板厚12mmの円形鋼管）
 
-(断面積 A=146.3cm<sup>2</sup>,断面係数Zy=1378cm<sup>3</sup>,断面二次モーメントIy=27552cm<sup>4</sup>)
+(断面積 A=146.3cm<sup>2</sup>, 断面係数Zy=1378cm<sup>3</sup>, 断面二次モーメントIy=27552cm<sup>4</sup>)
 
 材料 SN400
-(E=205000N/mm<sup>2</sup> 許容応力度f=156N/mm<sup>2</sup>)
+(E=205000N/mm<sup>2</sup>, 長期許容応力度f=156N/mm<sup>2</sup>)
 
 ### 支点条件
 
@@ -59,7 +59,7 @@ STEP2) 円弧ACBをn等分して節点位置を求め、各節点間を直線で
 
 ghpythonを用いて描画した場合
 
-![](img/2022-04-30-04-44-25.png)
+![](img/2022-05-14-15-19-38.png)
 
 ```python
 import rhinoscriptsyntax as rs
@@ -84,6 +84,18 @@ for i in range( len(pti)-1 ):
 
 rhino-pythonを用いて描画した場合（幾何計算）
 
+![](img/2022-05-14-17-05-47.png)
+
+1. 幾何条件L,hよりrを求める
+   
+   L2/4+(r-h)2=r2 → r=(L2/4+h2)/2h
+
+2. cosα=L/2/rよりαを求める
+   
+3. π-2αをn等分してi番目の節点座標を求める
+
+※原点を基点に計算しているので、y座標をr-hだけ引く必要があります。
+
 ```python
 import rhinoscriptsyntax as rs
 import math
@@ -94,7 +106,7 @@ ar = math.asin( (r-H)/r )
 th = ( math.pi- 2*ar ) / n
 
 # 円弧上の点の計算
-pti = []
+pti = [] # 節点（座標ではなくてジオメトリ）を格納するリスト
 for i in range(n+1):
     x = L / 2 - r *math.cos(ar + i*th) 
     z = r * math.sin(ar + i*th)- r + H
@@ -104,15 +116,17 @@ ptA = pti[ 0] # 始端
 ptB = pti[-1] # 終端（リストの最後は-1取り出せる）
 
 # 線分の描画
-elem = []
+elem = [] # 要素（ジオメトリ）を格納するリスト 
 for i in range(n):
-    ps = rs.PointCoordinates(pti[i])
+    # ジオメトリから節点座標を取り出す
+    ps = rs.PointCoordinates(pti[i]) 
     pe = rs.PointCoordinates(pti[i+1])
     elem.append(rs.AddLine(ps,pe))
 ```
 
 ## 3.Karamba3Dによる解析
-前回と同様に、Karambaの各コンポーネントを接続し、解析を実行し、曲げモーメントMy(y軸周り曲げモーメント)とNx(軸力)を表示します。ライズを調整することで部材に生じるMyやNxがどのように変化するか確認してください。
+前回と同様に、Karambaの各コンポーネントを接続し、解析を実行し、My(y軸周り曲げモーメント)とNx(軸力)を図化します。ライズを調整することで部材に生じるMyやNxがどのように変化するか確認してください。
+また、解析結果が想定と間違っていないか検証を行ってください。
 
 
 なお、各要素に生じる応力度（単位面積当たりの力）は下式であらわされます。
