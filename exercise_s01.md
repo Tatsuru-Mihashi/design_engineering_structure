@@ -1,4 +1,4 @@
-# 演習1（構造）
+# デジタルエンジニアリング特論2022/5/12 構造演習1
 ## 1. 演習課題
 以下のような単純梁をGrasshopper + Karamba3Dで解析します。
 
@@ -54,17 +54,17 @@ ghPythonではジオメトリを格納した変数をコンポーネントの出
 ```python
 import rhinoscriptsyntax as rs
 
-# 座標の定義（タプルで定義します。リストでも可）
+# 節点座標の定義（タプルで定義します。リストで定義してもも可）
 crdA = (  0,0,0)
 crdB = (L/2,0,0)
 crdC = (  L,0,0)
 
-# 節点の定義
+# 節点追加(Point)
 ptA = rs.AddPoint(crdA) 
 ptB = rs.AddPoint(crdB)
 ptC = rs.AddPoint(crdC)
 
-# 要素（LINE）の定義
+# 要素地下（Line）
 elemAB = rs.AddLine( crdA, crdB )
 elemBC = rs.AddLine( crdB, crdC )
 
