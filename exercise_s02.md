@@ -135,6 +135,8 @@ Karambaの各コンポーネントを接続して解析を実行し、My(y軸周
 
 <img src="https://latex.codecogs.com/svg.image?\sigma&space;=&space;\frac{N}{A}&plus;\frac{M}{Z}">
 
+![](img/2022-05-19-01-48-30.png)
+
 ライズを調節することで各要素に生じる最大応力度が小さくなるライズを探してみてください。
 
 以下は接続例です。
