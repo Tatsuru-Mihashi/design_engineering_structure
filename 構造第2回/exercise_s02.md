@@ -150,7 +150,7 @@ Maths　-> script -> Evaluate
 
 ## 4.断面性能の計算について
 
-Karamba3DのCrossSectionで定義した断面はDissassemble CrossSectionで出力できます。
+Karamba3DのCrossSectionで定義した断面はDissassemble CrossSectionで出力できます。Free版ではこの機能は使えません。
 
 以下に主なものを示しておきます。
 
