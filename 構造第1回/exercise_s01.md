@@ -1,62 +1,74 @@
-# デジタルエンジニアリング特論2022/5/12 構造演習1
-## 1. 演習課題
+デジタルエンジニアリング特論 構造演習1
+- [1. 演習課題](#1-演習課題)
+- [2. Grasshopperによる描画](#2-grasshopperによる描画)
+  - [2.1. コンポーネントの配置例1](#21-コンポーネントの配置例1)
+  - [2.2. コンポーネントの配置例2](#22-コンポーネントの配置例2)
+- [3. Karamba3Dによる解析](#3-karamba3dによる解析)
+- [4. 検証](#4-検証)
+
+# 1. 演習課題
 以下のような単純梁をGrasshopper + Karamba3Dで解析します。
 
-![](img/2022-05-05-21-15-20.png)
+![](img/fig1-0.png)
+
+スパンL=10.0m
+
+A点はピン支持、B点はピンローラー支持
+
+鋼材種別SS400(F = 235N/mm<sup>2</sup>)
 
 鋼材のヤング係数E=205000N/mm<sup>2</sup>
 
 断面 H - 400 x 200 x 8 x 13 ( Ix=22965cm<sup>4</sup> Zx = 1148cm<sup>3</sup>)
 
-点BはACの中点とする。
-
-## 2. Grasshopperによる描画
-
+# 2. Grasshopperによる描画
 
 grasshopper上で節点及び線を描画します。
 
+![](img/fig1-1.png)
+
 点A　原点（ 0, 0, 0 )
 
-点B　AC間の中心（ L / 2, 0, 0 )
+点B　AC間の任意の位置（ p , 0, 0 ) 0 < p < 10
 
-点C　　　（ L, 0, 0 )
+点C　　　（ 10, 0, 0 )
 
-スパンLはNumberSliderでパラメーターとして設定します。
+点Bの位置はNumberSliderでパラメーターとして設定します。
 
-![](img/2022-04-28-11-25-25.png)
 
-### 2.1 コンポーネントの配置例1
+## 2.1. コンポーネントの配置例1
 
 コンポーネントのみで配置した例
 
-![](img/2022-04-27-20-18-24.png)
+![](img/fig1-2.png)
 
 使用コンポーネント
 
 ・Panel
 
-・Division(Maths → Opeators)
+・Construction Point(Vector → Point)
 
 ・Number Slider(Params → Input)
 
-・Construction Point(Vector → Point)
-
 ・Line(Curve → Primitive)
 
-### 2.2 コンポーネントの配置例2
+## 2.2. コンポーネントの配置例2
 
 ghPythonを使用した例
 
-![](img/2022-05-05-21-20-07.png)
+![](img/fig1-3.png)
 
 ghPythonではジオメトリを格納した変数をコンポーネントの出力変数名に一致させる必要があります。
 
 ```python
 import rhinoscriptsyntax as rs
 
+# 文字列を数値化(ghpythonではpanelからの入力は文字となる)
+L = float(span) 
+
 # 節点座標の定義（タプルで定義します。リストで定義してもも可）
 crdA = (  0,0,0)
-crdB = (L/2,0,0)
+crdB = (pos,0,0)
 crdC = (  L,0,0)
 
 # 節点追加(Point)
@@ -64,13 +76,12 @@ ptA = rs.AddPoint(crdA)
 ptB = rs.AddPoint(crdB)
 ptC = rs.AddPoint(crdC)
 
-# 要素地下（Line）
+# 要素追加（Line）
 elemAB = rs.AddLine( crdA, crdB )
 elemBC = rs.AddLine( crdB, crdC )
-
 ```
 
-## 3. Karamba3Dによる解析
+# 3. Karamba3Dによる解析
 
 
 1.支点（境界条件）の定義
@@ -89,7 +100,7 @@ elemBC = rs.AddLine( crdB, crdC )
 
 8.出力（モデル及び梁要素）
 
-![](img/2022-04-29-23-45-09.png)
+![](img/fig1-4.png)
 
 
 使用コンポーネント
@@ -112,9 +123,10 @@ elemBC = rs.AddLine( crdB, crdC )
 
 ・Beam View(Karamba3D → Results)
 
-## 4.検証
+# 4. 検証
 
-解析結果が出たら中央の曲げモーメント及び中央（B点）の変形量について検証を行います。
+解析結果が出たら支点反力、中央の曲げモーメント及び中央の変形量について検証を行います。
+単純梁の中央曲げモーメントと変形は実務で最も使う構造力学の公式の一つです。
 
 単純梁の最大（中央部）の曲げモーメント
 
