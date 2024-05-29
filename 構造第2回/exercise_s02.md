@@ -345,7 +345,7 @@ with open(FN, "a") as file:
 
 先ほど出力したCSVファイルをグラフで確認します。
 ここでは部材に生じる最大応力度がどのように変化するか確認します。
-
+<!-- 
 ### 6.3.1. grasshopperによる出力
 grasshopperのquick graphというコンポーネントによって作図します。
 File Componentを配置し、右クリックでselect one exist fileをクリックし、出力したresult.csvを指定します。データはカンマ区切りの２列のデータで構成されていますので、TextSpritコンポーネントでカンマで分割し、1番目のデータを抽出します。
@@ -354,7 +354,7 @@ File Componentを配置し、右クリックでselect one exist fileをクリッ
 ![](img/quickgraph.png "quickgraph出力例")
 アーチを描画したように、canvas上に直接LINEコンポーネントで描画する方法もあります。
 
-### 6.3.2. pandasによる出力
+### 6.3.2. pandasによる出力 -->
 quickg raphコンポーネントでは、細かい操作ができないのでPythonのPandasライブラリを使って出力する場合について示します。
 最大応力度についてv1を指定した場合、pandasを利用すると以下のようなコードで図化できます。
 
