@@ -294,6 +294,7 @@ GrasshopperのNumber Sliderはアニメーションを行うことが可能で�
 
 これをPythonを使って動画にするコードを以下に示します。
 google colabにimagesフォルダを作成し、そこに作成した画像ファイルをコピーします。
+
 [colaboratory コード](https://colab.research.google.com/gist/Tatsuru-Mihashi/38499ef20b97987001857b957a471a00/gh_animation.ipynb?hl=ja)
 
 ```python
