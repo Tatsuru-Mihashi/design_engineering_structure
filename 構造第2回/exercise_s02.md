@@ -150,6 +150,7 @@ import rhinoscriptsyntax as rs
 import math
 
 n = int(n) # nを整数に変換
+L = float(L) # Lを実数に変換
 r =  ( L**2/4 + H**2 ) / 2/H # 円弧の半径rを算出
 ar = math.asin( (r-H)/r ) 
 th = ( math.pi- 2*ar ) / n
