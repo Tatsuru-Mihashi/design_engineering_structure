@@ -318,10 +318,11 @@ FN = 'animation.mp4'
 ## 6.2. Karambaで解析した結果をCSVに出力する
 
 grasshopperのnumber sliderを使ってパラメトリックに状態を確認することは可能ですが、number sliderの各値に対する解析結果(最大応力度や最大変形など)のgrasshopper上のcanvasに保存されません。
-GHPythonコンポーネントを使ってファイルに出力します。
+grasshopperのPython3scriptコンポーネントを使ってファイルに出力します。
 
 以下はresult.csvとしてカンマ区切りのファイルを出力する例です。
-コードをghpythonコンポーネント内に記述し、入力端子xにnumber sliderのライズ、v1に出力したい項目を接続してください。
+コンポーネントを配置し、ダブルクリックすることでコードを記述できます。
+入力端子xにnumber sliderのライズ、v1に出力したい項目を接続してください。
 また、FNに適切なファイルパスを設定してください。Desktopに設定すると操作が容易です。
 コードを修正すれば複数の値を出力することも可能です。
 
@@ -335,7 +336,7 @@ GHPythonコンポーネントを使ってファイルに出力します。
 import rhinoscriptsyntax as rs
 
 # ファイルに値を出力
-FN= "/*****/****/result.csv"  # ファイルパスを指定
+FN= r"/*****/****/result.csv"  # ファイルパスを指定
 with open(FN, "a") as file:
     file.write(str(x) + ',' + str(v1) + '\n')
 ```
