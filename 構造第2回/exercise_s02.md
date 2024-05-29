@@ -180,15 +180,15 @@ Karambaの各コンポーネントを接続して解析を実行し、My(y軸周
 
 以下はコンポーネントの接続例です。
 
-![](img/section.png)
+![](img/sc_section.png)
 
 *断面・材料定義*
 
-![](img/analysis.png)
+![](img/sc_analy1.png)
 
 *解析部*
 
-![](img/output.png)
+![](img/sc_output.png)
 
 *応力度計算*
 
