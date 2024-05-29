@@ -205,7 +205,7 @@ Karambaの各コンポーネントを接続して解析を実行し、My(y軸周
 
 断面検討を行う際に、断面積や断面計数などの断面性能と呼ばれる数値が必要となります。
 
-Karamba3DのCrossSectionで定義した断面はDissassemble CrossSectionで出力できます。Free版ではこの機能は使えませんので、代表的な断面性能の計算式を掲載しておきます。
+Karamba3DのCrossSectionで定義した断面はDissassemble CrossSectionで出力できます。今回は講義用にフル機能版が使えていますので、このコンポーネントを使用します。Free版ではこの機能は使えませんので、代表的な断面性能の計算式を掲載しておきます。
 
 + 正方形角形鋼管（柱せい $D$ x 板厚 $t$ ）
 
