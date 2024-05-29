@@ -18,8 +18,6 @@
   - [6.1. 連番で並んだ画像を動画にする](#61-連番で並んだ画像を動画にする)
   - [6.2. Karambaで解析した結果をCSVに出力する](#62-karambaで解析した結果をcsvに出力する)
   - [6.3. 出力されたCSVファイルをグラフに出力する](#63-出力されたcsvファイルをグラフに出力する)
-    - [6.3.1. grasshopperによる出力](#631-grasshopperによる出力)
-    - [6.3.2. pandasによる出力](#632-pandasによる出力)
 
 # 1. 演習課題
 
@@ -345,17 +343,8 @@ with open(FN, "a") as file:
 
 先ほど出力したCSVファイルをグラフで確認します。
 ここでは部材に生じる最大応力度がどのように変化するか確認します。
-<!-- 
-### 6.3.1. grasshopperによる出力
-grasshopperのquick graphというコンポーネントによって作図します。
-File Componentを配置し、右クリックでselect one exist fileをクリックし、出力したresult.csvを指定します。データはカンマ区切りの２列のデータで構成されていますので、TextSpritコンポーネントでカンマで分割し、1番目のデータを抽出します。
-このquick graphコンポーネントは指定された値の推移を示すもので、パラメーターとの相関を示すものではないことに注意してください。
 
-![](img/quickgraph.png "quickgraph出力例")
-アーチを描画したように、canvas上に直接LINEコンポーネントで描画する方法もあります。
-
-### 6.3.2. pandasによる出力 -->
-quickg raphコンポーネントでは、細かい操作ができないのでPythonのPandasライブラリを使って出力する場合について示します。
+PythonのPandasライブラリを使って出力する場合について示します。
 最大応力度についてv1を指定した場合、pandasを利用すると以下のようなコードで図化できます。
 
 [colaboratory コード](https://colab.research.google.com/gist/Tatsuru-Mihashi/6b1469276b6e54753d7f946b24c273fc/gh_makegraph.ipynb)
