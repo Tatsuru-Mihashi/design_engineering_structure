@@ -302,7 +302,7 @@ GrasshopperのNumber Sliderはアニメーションを行うことが可能で�
 ここで出力されるのは動画ファイルではなく、ファイル名が連番となった画像ファイルです。
 
 これをPythonを使って動画にするコードを以下に示します。
-google colabにimgフォルダを作成し、そこに作成した画像ファイルをコピーします。
+google colabにimgフォルダを作成し、そこに作成した画像ファイル全てをコピーします。
 
 [colaboratory コード](https://colab.research.google.com/gist/Tatsuru-Mihashi/38499ef20b97987001857b957a471a00/gh_animation.ipynb?hl=ja)
 
@@ -314,7 +314,7 @@ fps = 10
 
 # 画像ファイルの読み込み
 img_array = []
-for filename in sorted(glob.glob("images/*.bmp")):
+for filename in sorted(glob.glob("img/*.png")):
     img = cv2.imread(filename)
     height, width, layers = img.shape
     size = (width, height)
@@ -327,6 +327,13 @@ out = cv2.VideoWriter(FN, cv2.VideoWriter_fourcc(*'MP4V'), fps, size)
 for i in range(len(img_array)):
     out.write(img_array[i])
 out.release()
+
+# 動画の再生
+from moviepy.editor import VideoFileClip
+from IPython.display import display
+
+clip = VideoFileClip(FN)
+clip.ipython_display(width=640)
 ```
 
 ## 6.2. Karambaで解析した結果をCSVに出力する
