@@ -320,6 +320,11 @@ for filename in sorted(glob.glob("images/*.bmp")):
 
 # 出力ファイル名の設定
 FN = 'animation.mp4'
+
+out = cv2.VideoWriter(FN, cv2.VideoWriter_fourcc(*'MP4V'), fps, size)
+for i in range(len(img_array)):
+    out.write(img_array[i])
+out.release()
 ```
 
 ## 6.2. Karambaで解析した結果をCSVに出力する
