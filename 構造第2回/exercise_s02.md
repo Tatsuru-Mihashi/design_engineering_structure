@@ -178,19 +178,19 @@ Karambaの各コンポーネントを接続して解析を実行し、My(y軸周
 
 以下はコンポーネントの接続例です。
 
-![](img/sc_section.png)
+![](img/sc_section.png "断面・材料定義")
 
 *断面・材料定義*
 
-![](img/sc_analy1.png)
+![](img/sc_analy1.png "解析部分")
 
 *解析部*
 
-![](img/sc_output.png)
+![](img/sc_output.png "応力度計算")
 
 *応力度計算*
 
-![](img/canvas_all.png)
+![](img/canvas_all.png "全体図")
 
 *コンポーネント全体図*
 
@@ -201,10 +201,16 @@ Karambaの各コンポーネントを接続して解析を実行し、My(y軸周
 
 # 4. 断面性能の計算について
 
-断面検討を行う際に、断面積や断面計数などの断面性能と呼ばれる数値が必要となります。
+断面検討を行う際に、断面積や断面係数などの断面性能が必要となります。
+構造力学で習っていると思いますが、よく使う断面性能は以下の通りです。
+・断面積：部材の耐力（強さ）・軸剛性（硬さ）に関する係数
+・断面係数：部材の曲げ耐力（強さ）に関する係数
+・断面ニ次モーメント：部材の曲げ剛性（硬さ）に関する係数
 
-Karamba3DのCrossSectionで定義した断面はDissassemble CrossSectionで出力できます。今回は講義用にフル機能版が使えていますので、このコンポーネントを使用します。Free版ではこの機能は使えませんので、代表的な断面性能の計算式を掲載しておきます。
+Karamba3DのCrossSectionで定義した断面はDissassemble CrossSectionで出力できます。今回は講義用にフル機能版が使えていますので、このコンポーネントを使用します。Free版ではこの機能は使えませんので、注意が必要です。
 
+<!-- 
+代表的な断面性能の計算式を掲載しておきます。
 + 正方形角形鋼管（柱せい $D$ x 板厚 $t$ ）
 
 ```math
@@ -257,7 +263,7 @@ Maths　-> script -> Evaluate
 
 断面係数
 ![](img/eval_z.png)
-
+ -->
 
 # 5. 最大応力度の計算
 
@@ -366,7 +372,3 @@ df[1].idxmin()
 
 ![](img/pandas.png "pandas出力例")
 
-
-### おまけ LINE通知
-
-[colaboratory コード](https://colab.research.google.com/gist/Tatsuru-Mihashi/b7c42969a3756d60e17542e437a9bcf9/line.ipynb?hl=ja#scrollTo=UB2nWjcXCEzc)
