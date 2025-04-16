@@ -109,26 +109,6 @@ grasshopperはパラメトリックに座標や部材断面を変更すること
 ![](img/fig1-4.png)
 
 
-使用コンポーネント
-
-・Support(Karamba3D → Model)
-
-・LineToBeam(Karamba3D → Model)
-
-・MaterialSection(Karamba3D → Materials)
-
-・CrossSection(Karamba3D → Cross Section)
-
-・Loads(Karamba3D → Load)
-
-・Assemble(Karamba3D → Algorithms)
-
-・Analyze(Karamba3D → Algorithms)
-
-・Model View(Karamba3D → Results)
-
-・Beam View(Karamba3D → Results)
-
 # 4. 検証
 
 解析結果が出たら支点反力、中央の曲げモーメント及び中央の変形量について検証を行います。
