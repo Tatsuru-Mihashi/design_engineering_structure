@@ -1,3 +1,14 @@
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+ tex2jax: {
+ inlineMath: [['$', '$'] ],
+ displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+ }
+ });
+</script>
+
 デジタルエンジニアリング特論 構造演習1
 - [1. 演習課題](#1-演習課題)
 - [2. Grasshopperによる描画](#2-grasshopperによる描画)
@@ -144,6 +155,6 @@ grasshopperはパラメトリックに座標や部材断面を変更すること
 
 とすると、以下のような簡単な式になります。（単位が混在するので注意が必要）
 
-<img src="https://latex.codecogs.com/svg.image?\delta=\frac{ 5 \cdot 0.01 \cdot w \cdot 100000000 \cdot L^{4} }{384 \cdot 20500 \cdot I}">
+$$ \delta=\frac{ 5 \cdot 0.01 w \cdot (100 \cdot L)^{4} }{384 \cdot 20500 \cdot I} $$
 
-<img src="https://latex.codecogs.com/svg.image?\delta=0.635 \frac{w L^{4}}{I}">
+$$ =0.635 \frac{w L^{4}}{I} $$
