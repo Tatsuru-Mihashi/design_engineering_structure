@@ -128,22 +128,3 @@ grasshopperはパラメトリックに座標や部材断面を変更すること
 各自、手計算（電卓・Excelなど）で検証してみましょう。
 
 ※ 手計算ではせん断変形の影響を無視していますので、変形は若干小さめになります。
-
-追記
-
-変形 δ(cm)
-
-断面2次モーメントI(cm<sup>2</sup>)
-
-スパンL(m)
-
-分布荷重w(kN/m)
-
-鋼材のヤング係数E=205000N/mm<sup>2</sup>=20500kN/cm<sup>2</sup>
-
-とすると、以下のような簡単な式になります。（単位が混在するので注意が必要）
-
-<img src="https://latex.codecogs.com/svg.image?\delta=\frac{ 5 \cdot 0.01 \cdot w \cdot 100000000 \cdot L^{4} }{384 \cdot 20500 \cdot I}&space;">
-
-<img src="https://latex.codecogs.com/svg.image?\delta=0.635 \frac{w L^{4}}{I}&space;">
-
