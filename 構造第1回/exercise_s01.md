@@ -149,4 +149,7 @@ $$
 =0.635 \frac{w L^{4}}{I}
 $$
 
+openseespyによる解析
+
+https://colab.research.google.com/gist/Tatsuru-Mihashi/fbf4935be7e1ca30c6d43ebd5b31dd8f/sample_openseespy.ipynb#scrollTo=mvDJYuTua8Xr
 
