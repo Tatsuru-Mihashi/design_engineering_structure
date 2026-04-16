@@ -144,6 +144,7 @@ grasshopperはパラメトリックに座標や部材断面を変更すること
 
 とすると、以下のような簡単な式になります。（単位が混在するので注意が必要）
 
+![eq](https://latex.codecogs.com/svg.image?\delta=\frac{5\cdot0.01w\cdot(100\cdot L)^4}{384\cdot20500\cdot I}=0.635\frac{wL^4}{I})
 
 ![eq](https://latex.codecogs.com/svg.image?E=mc^2)
 
@@ -152,3 +153,4 @@ grasshopperはパラメトリックに座標や部材断面を変更すること
 $ \delta=\frac{ 5 \cdot 0.01 w \cdot (100 \cdot L)^{4} }{384 \cdot 20500 \cdot I} $
 
 $ =0.635 \frac{w L^{4}}{I} $
+
