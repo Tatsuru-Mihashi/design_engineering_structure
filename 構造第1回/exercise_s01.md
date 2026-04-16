@@ -144,7 +144,13 @@ grasshopperはパラメトリックに座標や部材断面を変更すること
 
 とすると、以下のような簡単な式になります。（単位が混在するので注意が必要）
 
-![eq](https://latex.codecogs.com/svg.image?\delta=\frac{5\cdot0.01w\cdot(100\cdot L)^4}{384\cdot20500\cdot I}=0.635\frac{wL^4}{I})
+$$
+\delta=\frac{ 5 \cdot 0.01 w \cdot (100 \cdot L)^{4} }{384 \cdot 20500 \cdot I}
+=0.635 \frac{w L^{4}}{I}
+$$
+
+![eq](https://latex.codecogs.com/svg.image?%5Cdelta%3D%5Cfrac%7B%205%20%5Ccdot%200.01w%20%5Ccdot%20%28100%20%5Ccdot%20L%29%5E%7B4%7D%20%7D%7B384%20%5Ccdot%2020500%20%5Ccdot%20I%7D%20%3D%200.635%20%5Cfrac%7BwL%5E%7B4%7D%7D%7BI%7D)
+
 
 ![eq](https://latex.codecogs.com/svg.image?E=mc^2)
 
