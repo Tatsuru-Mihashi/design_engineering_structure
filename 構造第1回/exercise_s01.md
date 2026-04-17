@@ -153,3 +153,126 @@ openseespyによる解析
 
 https://colab.research.google.com/gist/Tatsuru-Mihashi/fbf4935be7e1ca30c6d43ebd5b31dd8f/sample_openseespy.ipynb#scrollTo=mvDJYuTua8Xr
 
+$$
+\mathbf{F} = \mathbf{K}\mathbf{x}
+$$
+
+$$
+\mathbf{x} =
+\begin{bmatrix}
+u_1 \\
+v_1 \\
+\theta_1 \\
+u_2 \\
+v_2 \\
+\theta_2 \\
+u_3 \\
+v_3 \\
+\theta_3
+\end{bmatrix}
+$$
+
+$$
+\mathbf{F} =
+\begin{bmatrix}
+0 \\
+-\frac{w\ell}{2} \\
+-\frac{w\ell^2}{12} \\
+0 \\
+-w\ell \\
+0 \\
+0 \\
+-\frac{w\ell}{2} \\
+\frac{w\ell^2}{12}
+\end{bmatrix}
+$$
+
+$$
+\mathbf{K} =
+\begin{bmatrix}
+\frac{EA}{\ell} & 0 & 0 & -\frac{EA}{\ell} & 0 & 0 & 0 & 0 & 0 \\
+0 & \frac{12EI}{\ell^3} & \frac{6EI}{\ell^2} & 0 & -\frac{12EI}{\ell^3} & \frac{6EI}{\ell^2} & 0 & 0 & 0 \\
+0 & \frac{6EI}{\ell^2} & \frac{4EI}{\ell} & 0 & -\frac{6EI}{\ell^2} & \frac{2EI}{\ell} & 0 & 0 & 0 \\
+-\frac{EA}{\ell} & 0 & 0 & \frac{2EA}{\ell} & 0 & 0 & -\frac{EA}{\ell} & 0 & 0 \\
+0 & -\frac{12EI}{\ell^3} & -\frac{6EI}{\ell^2} & 0 & \frac{24EI}{\ell^3} & 0 & 0 & -\frac{12EI}{\ell^3} & \frac{6EI}{\ell^2} \\
+0 & \frac{6EI}{\ell^2} & \frac{2EI}{\ell} & 0 & 0 & \frac{8EI}{\ell} & 0 & -\frac{6EI}{\ell^2} & \frac{2EI}{\ell} \\
+0 & 0 & 0 & -\frac{EA}{\ell} & 0 & 0 & \frac{EA}{\ell} & 0 & 0 \\
+0 & 0 & 0 & 0 & -\frac{12EI}{\ell^3} & -\frac{6EI}{\ell^2} & 0 & \frac{12EI}{\ell^3} & -\frac{6EI}{\ell^2} \\
+0 & 0 & 0 & 0 & \frac{6EI}{\ell^2} & \frac{2EI}{\ell} & 0 & -\frac{6EI}{\ell^2} & \frac{4EI}{\ell}
+\end{bmatrix}
+$$
+
+$$
+\mathbf{F} =
+\begin{bmatrix}
+0 \\
+-37.5 \\
+-3125 \\
+0 \\
+-75 \\
+0 \\
+0 \\
+-37.5 \\
+3125
+\end{bmatrix}
+$$
+
+$$
+\mathbf{K} =
+\begin{bmatrix}
+3358.72 & 0 & 0 & -3358.72 & 0 & 0 & 0 & 0 & 0 \\
+0 & 45.19512 & 11298.78 & 0 & -45.19512 & 11298.78 & 0 & 0 & 0 \\
+0 & 11298.78 & 3.76626\times10^6 & 0 & -11298.78 & 1.88313\times10^6 & 0 & 0 & 0 \\
+-3358.72 & 0 & 0 & 6717.44 & 0 & 0 & -3358.72 & 0 & 0 \\
+0 & -45.19512 & -11298.78 & 0 & 90.39024 & 0 & 0 & -45.19512 & 11298.78 \\
+0 & 11298.78 & 1.88313\times10^6 & 0 & 0 & 7.53252\times10^6 & 0 & -11298.78 & 1.88313\times10^6 \\
+0 & 0 & 0 & -3358.72 & 0 & 0 & 3358.72 & 0 & 0 \\
+0 & 0 & 0 & 0 & -45.19512 & -11298.78 & 0 & 45.19512 & -11298.78 \\
+0 & 0 & 0 & 0 & 11298.78 & 1.88313\times10^6 & 0 & -11298.78 & 3.76626\times10^6
+\end{bmatrix}
+$$
+
+なお、境界条件（u1​=0,v1​=0,v3​=0）を考慮すると以下のようになります。
+$$
+\mathbf{F}_f = \mathbf{K}_{ff}\mathbf{x}_f
+$$
+
+$$
+\mathbf{x}_f =
+\begin{bmatrix}
+\theta_1 \\
+u_2 \\
+v_2 \\
+\theta_2 \\
+u_3 \\
+\theta_3
+\end{bmatrix}
+$$
+
+$$
+\mathbf{F}_f =
+\begin{bmatrix}
+-\frac{w\ell^2}{12} \\
+0 \\
+-w\ell \\
+0 \\
+0 \\
+\frac{w\ell^2}{12}
+\end{bmatrix}
+$$
+
+$$
+\mathbf{K}_{ff} =
+\begin{bmatrix}
+\frac{4EI}{\ell} & 0 & -\frac{6EI}{\ell^2} & \frac{2EI}{\ell} & 0 & 0 \\
+0 & \frac{2EA}{\ell} & 0 & 0 & -\frac{EA}{\ell} & 0 \\
+-\frac{6EI}{\ell^2} & 0 & \frac{24EI}{\ell^3} & 0 & 0 & \frac{6EI}{\ell^2} \\
+\frac{2EI}{\ell} & 0 & 0 & \frac{8EI}{\ell} & 0 & \frac{2EI}{\ell} \\
+0 & -\frac{EA}{\ell} & 0 & 0 & \frac{EA}{\ell} & 0 \\
+0 & 0 & \frac{6EI}{\ell^2} & \frac{2EI}{\ell} & 0 & \frac{4EI}{\ell}
+\end{bmatrix}
+$$
+
+連立方程式を解くコード
+
+https://colab.research.google.com/gist/Tatsuru-Mihashi/8bcfdae5464f5cf6bd997b724ec217e7/sample_solve_matrix.ipynb
